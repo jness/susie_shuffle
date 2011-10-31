@@ -10,11 +10,12 @@ def index(request):
             return render(request, 'index.html')
 
         text = text.split() 
+        count = len(text)
         shuffle(text)
         shuffle(text)
         text = ' '.join(text)
 
-        return render(request, 'shuffle.html', {'text': text})
+        return render(request, 'shuffle.html', {'text': text, 'count': count})
     else:
         return render(request, 'index.html')
 
